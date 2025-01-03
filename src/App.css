@@ -237,6 +237,75 @@ body {
     opacity: 0;
     animation: showContent .5s 1s linear 1 forwards;
 }
+
+/* Partners Slider */
+.partners-slider {
+  position: relative;
+  width: 100%;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.slider-content {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.logo-item {
+  width: 100%;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.logo-item img {
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.logo-item.active {
+  opacity: 1;
+}
+
+.arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.arrows button {
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.arrows button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Media Queries */
+@media (max-width: 767px) {
+  .logo-item img {
+    max-height: 80px;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo-item img {
+    max-height: 120px;
+  }
+}
+
 @keyframes showContent{
     to{
         transform: translateY(0px);
@@ -425,3 +494,67 @@ body {
   color: white;
   z-index: 2; /* To display above the overlay */
 }
+
+/* Container for the scrolling slider */
+.partners-slider-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    padding: 20px 0; /* Add some padding on the top and bottom */
+  }
+  
+  /* The slider section that holds the logos */
+  .partners-slider {
+    display: flex;
+    animation: scroll 15s linear infinite; /* 15s for scroll speed, adjust as needed */
+    white-space: nowrap;
+  }
+  
+  /* Each individual partner logo */
+  .partner-item {
+    margin: 0 10px; /* Adjust spacing between logos */
+  }
+  
+  .partner-item img {
+    height: 100px; /* Set the height to the desired size */
+    object-fit: contain; /* Ensure logos scale without distortion */
+  }
+  
+  /* Scroll animation definition */
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%); /* Start from the right edge */
+    }
+    100% {
+      transform: translateX(-100%); /* End at the left edge */
+    }
+  }
+  .partners-section {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .partners-section h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #1C6195;
+    font-weight: 700;
+  }
+  
+  .partners-slider {
+    margin-top: 1rem;
+  }
+
+
+  @media (max-width: 480px) {
+   
+    .partner-item img {
+      max-width: 80px; /* Restrict the width to maintain proportions */
+      max-height: 80px; /* Ensure logos don't stretch vertically */
+      width: auto; /* Maintain aspect ratio */
+      height: auto; /* Maintain aspect ratio */
+      margin: 0 auto; /* Center the logo within its container */
+    }
+    
+  }
+  

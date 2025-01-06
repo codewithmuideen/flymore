@@ -9,7 +9,7 @@ const Header = () => {
     { name: "Home", link: "/" },
     { name: "About", link: "/" },
     { name: "Tours", link: "/" },
-    { name: "Services", link: "#" }, // Changed link to '#' to prevent navigation
+    { name: "Services", link: "/" }, // Changed link to '#' to prevent navigation
     { name: "Testimonials", link: "/" },
     { name: "Attraction Tickets", link: "/" },
     { name: "Contact", link: "/" },

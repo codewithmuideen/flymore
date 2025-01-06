@@ -75,7 +75,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
+  
       <div className="social"
        style={{
         display: 'flex',

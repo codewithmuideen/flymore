@@ -6,13 +6,13 @@ import { AiOutlineArrowRight } from "react-icons/ai";
 
 const Header = () => {
   let Links = [
-    { name: "Home", link: "/" },
-    { name: "About", link: "/" },
-    { name: "Tours", link: "/" },
-    { name: "Services", link: "/" }, // Changed link to '#' to prevent navigation
-    { name: "Testimonials", link: "/" },
-    { name: "Attraction Tickets", link: "/" },
-    { name: "Contact", link: "/" },
+    { name: "Home", link: "#home" },
+    { name: "About", link: "#about" },
+    { name: "Tours", link: "#tour" },
+    { name: "Services", link: "#service" }, // Changed link to '#' to prevent navigation
+    { name: "Testimonials", link: "#testimonial" },
+    { name: "Attraction Tickets", link: "#recommend" },
+    { name: "Contact", link: "#contact" },
   ];
 
   const [open, setOpen] = useState(false);
@@ -45,7 +45,7 @@ const Header = () => {
           {Links.map((link, index) => (
             <li
               key={index}
-              className={`md:ml-8 md:my-0 my-7 font-semibold relative ${
+              className={`md:ml-8 md:my-0 my-7 font-medium relative ${
                 link.name === "Services" ? "dropdown" : ""
               }`}
               onMouseEnter={link.name === "Services" ? toggleDropdown : null}
@@ -61,14 +61,29 @@ const Header = () => {
               {/* Dropdown Menu for Services */}
               {link.name === "Services" && dropdownOpen && (
                 <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg">
-                  <li className="px-4 py-2 hover:bg-gray-200">Ticketing</li>
-                  <li className="px-4 py-2 hover:bg-gray-200">Visa Services</li>
-                  <li className="px-4 py-2 hover:bg-gray-200">Travel Abroad</li>
-                  <li className="px-4 py-2 hover:bg-gray-200">Corperate Travel</li>
-                  <li className="px-4 py-2 hover:bg-gray-200">Travel Accomodation</li>
-                  <li className="px-4 py-2 hover:bg-gray-200">Travel Insurance</li>
-                  <li className="px-4 py-2 hover:bg-gray-200">Travel COnsultancy</li>
-                </ul>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href="#ticketing">Ticketing</a>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href="#services">Visa Services</a>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href="#tour">Travel Abroad</a>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href="#recommend">Corporate Travel</a>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href="#service">Travel Accommodation</a>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href="#service">Travel Insurance</a>
+                </li>
+                <li className="px-4 py-2 hover:bg-gray-200">
+                  <a href="#contact">Travel Consultancy</a>
+                </li>
+              </ul>
+              
               )}
             </li>
           ))}

@@ -5,27 +5,27 @@ import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwit
 
 export default function Footer() {
   const quickLinks = [
-    "About Us",
-    "Destinations",
-    "Tours",
-    "Services",
-    "Contact Us",
+    { label: "About Us", link: "#about" },
+    { label: "Destinations", link: "#recommend" },
+    { label: "Tours", link: "#tour" },
+    { label: "Services", link: "#services" },
+    { label: "Contact Us", link: "#contact" },
   ];
+
   const supportLinks = [
-    "Customer Support",
-    "Privacy Policy",
-    "Terms & Condition",
-    "FAQS",
-    "Testimonials",
+    { label: "Customer Support", link: "#support" },
+    { label: "Privacy Policy", link: "#privacy" },
+    { label: "Terms & Condition", link: "#terms" },
+    { label: "FAQs", link: "#footer" },
+    { label: "Testimonials", link: "#testimonial" },
   ];
 
   return (
     <Container>
-      <div className="upper-footer" style={{margin:'3%'}}>
+      <div className="upper-footer">
         <div className="col">
           <div className="brand">
             <div className="logo">
-              {/* Replace with your logo */}
               <h2 style={{ fontWeight: 600, fontFamily: 'Tahoma' }}>CONTACT INFO</h2> <br /><br />
             </div>
             <p className="description">
@@ -34,7 +34,7 @@ export default function Footer() {
           </div>
           <ul>
             <li>
-              <FaPhoneAlt size={18} /> <span> (+234) 81 3432 4983 </span>
+              <FaPhoneAlt size={18} /> <span> (+234) 705 511 5282 </span>
             </li>
             <li>
               <FaEnvelope size={18} /> <span>info@flymoretravels.com</span>
@@ -44,32 +44,40 @@ export default function Footer() {
             </li>
           </ul>
         </div>
+
         <div className="col">
           <h2 style={{ fontWeight: 600, fontFamily: 'Tahoma' }}>QUICK LINKS</h2>
           <ul>
-            {quickLinks.map((link) => (
-              <li key={link}>{link}</li>
+            {quickLinks.map((link, index) => (
+              <li key={index}>
+                <a href={link.link}>{link.label}</a>
+              </li>
             ))}
           </ul>
         </div>
+
         <div className="col">
           <h2 style={{ fontWeight: 600, fontFamily: 'Tahoma' }}>SUPPORT</h2>
           <ul>
-            {supportLinks.map((link) => (
-              <li key={link}>{link}</li>
+            {supportLinks.map((link, index) => (
+              <li key={index}>
+                <a href={link.link}>{link.label}</a>
+              </li>
             ))}
           </ul>
         </div>
+
         <div className="col">
           <h2 style={{ fontWeight: 600, fontFamily: 'Tahoma' }}>NEWSLETTERS</h2>
           <div className="newsletter">
-            <input type="text" placeholder="Your Email" />
+            <input type="email" placeholder="Your Email" />
             <button>Subscribe Now</button>
           </div>
         </div>
       </div>
-      <div className="social" 
-      style={{
+
+      <div className="social"
+       style={{
         display: 'flex',
         justifyContent: 'space-between',
         margin: '0% 1%',
@@ -79,6 +87,7 @@ export default function Footer() {
         <div className="logo logome">
           <img src={images.logowhite4} alt="logo" />
         </div>
+
         <div className="social-icons">
           <i>
             <FaFacebook size={20} />
@@ -94,6 +103,7 @@ export default function Footer() {
           </i>
         </div>
       </div>
+
       <div className="lower-footer">
         <span>
           Copyright &copy; 2025 Flymore Travels. Designed by{" "}
@@ -114,7 +124,6 @@ const Container = styled.footer`
   padding-bottom: 2rem;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
-
 
   .upper-footer {
     display: grid;
@@ -153,6 +162,11 @@ const Container = styled.footer`
 
           &:hover {
             color: var(--primary-color);
+          }
+
+          a {
+            text-decoration: none;
+            color: inherit;
           }
         }
       }
@@ -219,7 +233,7 @@ const Container = styled.footer`
         transition: all 0.3s ease;
 
         &:hover {
-          background-color: rgba(0, 188, 212, 0.7); /* Match with your button color */
+          background-color: rgba(0, 188, 212, 0.7);
           transform: scale(1.1);
         }
       }
@@ -234,6 +248,7 @@ const Container = styled.footer`
   @media screen and (min-width: 280px) and (max-width: 1080px) {
     .upper-footer {
       grid-template-columns: 1fr;
+      border-bottom: none;
     }
   }
 `;

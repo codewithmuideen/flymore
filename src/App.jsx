@@ -26,19 +26,35 @@ const App = () => {
     <div className="App">
       <GlobalStyles />
       <Header />
-      <Carousel />
+     <section id="home">
+     <Carousel />
+     </section>
       <section className="partners-section">
         <h2>Our Partners</h2>
         <PartnersSlider logos={logos} /> {/* PartnersSlider component here */}
       </section>
+      <section id="about">
       <About />
+      </section>
+      <section id="tour">
       <Tours />
-      <Destinations />
+      </section>
+     <section id="destination">
+     <Destinations />
+     </section>
+      <section id="service">
       <Services />
+      </section>
       <WhyUs />
-      <Testimonial />
+     <section id="testimonial">
+     <Testimonial />
+     </section>
+      <section id="recommend">
       <Recommend />
+      </section>
+      <section id="contact">
       <Contact />
+      </section>
       <Footer />
     </div>
   );

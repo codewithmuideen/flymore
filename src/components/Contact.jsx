@@ -78,7 +78,7 @@ const Contact = () => {
                       Phone Number
                     </h4>
                     <p className="text-base text-body-color dark:text-dark-6">
-                      <a href="callto:+2348134324983">(+234)81 3432 4983 </a>
+                      <a href="callto:+2347055115282">(+234) 705 511 5282 </a>
                     </p>
                   </div>
                 </div>

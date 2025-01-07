@@ -168,17 +168,18 @@ const About = () => {
           </motion.ul>
 
           {/* Call to Action */}
-          <motion.a
-            href="https://wa.me/2348063362208?text=Hello,%20this%20is%20from%20Flymore%20Travels%20Website"
-              target="_blank"
-              rel="noopener noreferrer"
-            className="inline-block text-white py-5 px-8 font-semibold
-             hover:bg-green-700 transition duration-300 rounded-full"
-            style={{ background: "#1C6195"}}
-            whileHover={{ scale: 1.1 }}
+          <a
+  href="https://wa.me/2347055115282?text=Hello,%20I%20want%20to%20discover%20more%20about%20Flymore%20Travels"
+  target="_blank"
+  rel="noopener noreferrer"
+> 
+          <button
+            className="flex items-center gap-2 text-white md:ml-8 font-semibold px-5 py-5 rounded-full duration-500 md:static"
+            style={{ backgroundColor: "#1C6195" }}
           >
-            BOOK NOW &rarr;
-          </motion.a>
+            BOOK NOW <AiOutlineArrowRight className="w-4 h-4" />
+          </button>
+          </a>
         </motion.div>
 
         {/* Image Section */}

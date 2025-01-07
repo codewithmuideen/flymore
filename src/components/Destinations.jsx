@@ -42,7 +42,7 @@ export default function Destinations() {
           iconic locations and start your journey today!
         </p>
         <a
-  href="https://wa.me/2348063362208?text=Hello,%20I%20want%20to%20discover%20more%20about%20Flymore%20Travels"
+  href="https://wa.me/2347055115282?text=Hello,%20I%20want%20to%20discover%20more%20about%20Flymore%20Travels"
   target="_blank"
   rel="noopener noreferrer"
 >

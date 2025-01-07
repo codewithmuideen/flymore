@@ -24,6 +24,12 @@ export default function Services() {
     //     "Plan and book your international trips with our tailored travel packages and expert advice.",
     // },
     {
+      icon: images.tra,
+      title: "Study Abroad",
+      subTitle:
+        "Explore educational opportunities across the globe with our expert study abroad services and guidance.",
+    },
+    {
       icon: images.cor,
       title: "Corporate Travel",
       subTitle:
@@ -46,12 +52,6 @@ export default function Services() {
       title: "Travel Consultancy",
       subTitle:
         "Get expert travel advice to plan your trips, ensuring a stress-free and memorable travel experience.",
-    },
-    {
-      icon: images.stud2,
-      title: "Study Abroad",
-      subTitle:
-        "Explore educational opportunities across the globe with our expert study abroad services and guidance.",
     },
   ];
 

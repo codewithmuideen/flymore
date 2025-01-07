@@ -148,7 +148,7 @@ export default function Footer() {
 
       <div className="lower-footer">
         <span>
-          Copyright &copy; 2025 Flymore Travels. Designed by{" "}
+          Copyright &copy; 2025 Flymore Travels. Powered by{" "}
           <a href="https://royeweb.vercel.app">OlamiTobi Technologies</a>
         </span>
       </div>

@@ -13,18 +13,20 @@ import Recommend from "./components/Recommend";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 import GlobalStyles from "./GlobalStyles";
-
+import images from "./constants/images";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   const logos = [
-    { src: "templars.png", alt: "Partner 3" },
-    { src: "waka.png", alt: "Partner 4" },
-    { src: "arik.png", alt: "Partner 6" },
+    { src: images.templars, alt: "Partner 3" },
+    { src: images.waka, alt: "Partner 4" },
+    { src: images.arik, alt: "Partner 6" },
   ];
 
   return (
     <div className="App">
       <GlobalStyles />
+      <ScrollToTop />
       <Header />
      <section id="home">
      <Carousel />

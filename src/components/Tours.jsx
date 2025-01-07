@@ -46,7 +46,7 @@ export default function Tours() {
                 <div className="details">
                   <h4>{title}</h4>
                   <div className="price-details">
-                    <span className="price">${price}</span>
+                    <span className="price">&#36;{price}</span>
                     <div className="reviews">
                       <div className="stars">
                         <BsFillStarFill />
@@ -58,6 +58,7 @@ export default function Tours() {
                       <span className="review">{reviews}</span>
                     </div>
                   </div>
+                  
                 </div>
                 <button>+</button>
               </div>

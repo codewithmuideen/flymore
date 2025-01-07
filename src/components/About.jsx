@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import images from "../constants/images";
-
+import { AiOutlineArrowRight } from "react-icons/ai";
 const About = () => {
   // Framer Motion Variants
   const textVariants = {
@@ -169,12 +169,15 @@ const About = () => {
 
           {/* Call to Action */}
           <motion.a
-            href="#"
-            className="inline-block text-white py-5 px-8 font-semibold hover:bg-green-700 transition duration-300 rounded-full"
-            style={{ background: "#1C6195" }}
+            href="https://wa.me/2348063362208?text=Hello,%20this%20is%20from%20Flymore%20Travels%20Website"
+              target="_blank"
+              rel="noopener noreferrer"
+            className="inline-block text-white py-5 px-8 font-semibold
+             hover:bg-green-700 transition duration-300 rounded-full"
+            style={{ background: "#1C6195"}}
             whileHover={{ scale: 1.1 }}
           >
-            BOOKING NOW
+            BOOK NOW &rarr;
           </motion.a>
         </motion.div>
 

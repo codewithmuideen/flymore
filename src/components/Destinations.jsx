@@ -41,12 +41,19 @@ export default function Destinations() {
           await. Explore the beauty, adventure, and wonder of the world's most
           iconic locations and start your journey today!
         </p>
-        <button
-          className="flex items-center gap-2 text-white md:ml-8 font-semibold px-5 py-5 rounded-full duration-500 md:static"
-          style={{ backgroundColor: "#1C6195" }}
-        >
-          DISCOVER MORE <AiOutlineArrowRight className="w-4 h-4" />
-        </button>
+        <a
+  href="https://wa.me/2348063362208?text=Hello,%20I%20want%20to%20discover%20more%20about%20Flymore%20Travels"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button
+    className="flex items-center gap-2 text-white md:ml-8 font-semibold px-5 py-5 rounded-full duration-500 md:static"
+    style={{ backgroundColor: "#1C6195" }}
+  >
+    DISCOVER MORE <AiOutlineArrowRight className="w-4 h-4" />
+  </button>
+</a>
+
       </motion.div>
 
       <motion.div

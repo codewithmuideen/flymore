@@ -17,12 +17,12 @@ export default function Services() {
       subTitle:
         "We offer visa application services and provide assistance with required documentation and processing.",
     },
-    {
-      icon: images.tra,
-      title: "Travel Abroad",
-      subTitle:
-        "Plan and book your international trips with our tailored travel packages and expert advice.",
-    },
+    // {
+    //   icon: images.tra,
+    //   title: "Travel Abroad",
+    //   subTitle:
+    //     "Plan and book your international trips with our tailored travel packages and expert advice.",
+    // },
     {
       icon: images.cor,
       title: "Corporate Travel",

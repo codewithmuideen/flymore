@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import images from "../constants/images";  
+import images from "../constants/images";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaInstagram, FaTwitter, FaLinkedin } from 'react-icons/fa';
 
 export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+  const [email, setEmail] = useState(""); // Email state
+  const [emailError, setEmailError] = useState(""); // Email error state
+
   const quickLinks = [
     { label: "About Us", link: "#about" },
     { label: "Destinations", link: "#recommend" },
@@ -19,6 +23,25 @@ export default function Footer() {
     { label: "FAQs", link: "#footer" },
     { label: "Testimonials", link: "#testimonial" },
   ];
+
+  // Handle email subscribe button click
+  const handleSubscribe = (e) => {
+    e.preventDefault(); // Prevent the form from submitting
+    
+    // Simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (emailRegex.test(email)) {
+      setIsModalOpen(true); // Show modal if email is valid
+      setEmailError(""); // Reset any existing errors
+    } else {
+      setEmailError("Please enter a valid email address."); // Show error if email is invalid
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false); // Close modal
+  };
 
   return (
     <Container>
@@ -69,20 +92,39 @@ export default function Footer() {
 
         <div className="col">
           <h2 style={{ fontWeight: 600, fontFamily: 'Tahoma' }}>NEWSLETTERS</h2>
-          <div className="newsletter">
-            <input type="email" placeholder="Your Email" />
-            <button>Subscribe Now</button>
-          </div>
+          <form>
+            <div className="newsletter">
+              <input
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)} // Update email state on input change
+                required
+              />
+              <button onClick={handleSubscribe}>Subscribe Now</button>
+              {emailError && <span style={{ color: 'red', marginTop: '10px' }}>{emailError}</span>} {/* Show error message */}
+            </div>
+          </form>
         </div>
       </div>
   
+      {/* Modal */}
+      {isModalOpen && (
+        <ModalOverlay>
+          <ModalContent>
+            <h3 style={{color:'black'}}>You have subscribed to our newsletter!</h3>
+            <button onClick={closeModal}>Close</button>
+          </ModalContent>
+        </ModalOverlay>
+      )}
+
       <div className="social"
-       style={{
-        display: 'flex',
-        justifyContent: 'space-between',
-        margin: '0% 1%',
-        flexWrap: 'wrap', // Allow wrapping on smaller screens
-      }}
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          margin: '0% 1%',
+          flexWrap: 'wrap', // Allow wrapping on smaller screens
+        }}
       >
         <div className="logo logome">
           <img src={images.logowhite4} alt="logo" />
@@ -115,7 +157,7 @@ export default function Footer() {
 }
 
 const Container = styled.footer`
-  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${images.aboutImg}); /* Replace 'aboutImg' with your image key */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(${images.aboutImg});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -225,7 +267,7 @@ const Container = styled.footer`
     .social-icons {
       display: flex;
       gap: 1rem;
-      
+
       i {
         background-color: #008c99;
         border-radius: 50%;
@@ -250,5 +292,45 @@ const Container = styled.footer`
       grid-template-columns: 1fr;
       border-bottom: none;
     }
+  }
+`;
+
+const ModalOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+`;
+
+const ModalContent = styled.div`
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 300px;
+
+  h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    background-color: #008c99;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background-color: #007b8c;
   }
 `;
